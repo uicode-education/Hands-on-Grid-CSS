@@ -1,0 +1,151 @@
+.container {
+    max-width: 1160px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+main {
+    padding-top: 48px;
+}
+
+.title {
+    font-family: Inter;
+    color: #262626;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3.5px;
+    margin-bottom: 8px;
+}
+
+.title span {
+    color: #45EA73;
+}
+
+.paragraphs {
+    color: #262626;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 2px;
+}
+
+.display {
+    margin-bottom: 32px;
+}
+
+.slider {
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 300px);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 12px;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 12px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.grid.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider-prev {
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
+    background-color: #CBCBCB;
+}
+
+.slider-next {
+    grid-column: 9 / 17;
+    grid-row: 9 / 13;
+    background-color: #45EA73;
+}
+
+.slider-prev,
+.slider-next {
+    position: relative;
+    transition: .2s background-color ease;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.slider-prev svg,
+.slider-next svg {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+}
+
+.slider-prev svg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-next svg {
+    top: 50%;
+    right: 8%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background-color: #006DFF;
+    color: #FFF;
+}
+
+
+.grid-item-01 {
+    grid-column: 1 / 5;
+    grid-row: 5 / 13;
+}
+
+.grid-item-02 {
+    grid-column: 5 / 13;
+    grid-row: 1 / 9;
+}
+
+.grid-item-03 {
+    grid-column: 5 / 9;
+    grid-row: 9 / 13;
+}
+
+.grid-item-04 {
+    grid-column: 13 / 17;
+    grid-row: 1 / 5;
+}
+
+.grid-item-05 {
+    grid-column: 13 / 17;
+    grid-row: 5 / 9;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
